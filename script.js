@@ -27,6 +27,7 @@ const resetButton = document.getElementById("reset-timer");
 const timerHours = document.getElementById("timer-hours");
 const timerMinutes = document.getElementById("timer-minutes");
 const timerSeconds = document.getElementById("timer-seconds");
+const timerDisplay = document.getElementById("timer-display");
 
 let timerInterval;
 let hoursRemaining = 0;
@@ -34,9 +35,7 @@ let minutesRemaining = 0;
 let secondsRemaining = 0;
 
 function updateTimerDisplay() {
-  timerHours.value = String(hoursRemaining).padStart(2, "0");
-  timerMinutes.value = String(minutesRemaining).padStart(2, "0");
-  timerSeconds.value = String(secondsRemaining).padStart(2, "0");
+  timerDisplay.value = `${String(hoursRemaining).padStart(2, "0")}:${String(minutesRemaining).padStart(2, "0")}:${String(secondsRemaining).padStart(2, "0")}`;
 }
 
 function startTimer() {
@@ -49,7 +48,7 @@ function startTimer() {
   timerInterval = setInterval(function () {
     if (hoursRemaining === 0 && minutesRemaining === 0 && secondsRemaining === 0) {
       clearInterval(timerInterval);
-      alert("Time is up!");
+      timerDisplay.value = "Time is up!";
     } else {
       if (secondsRemaining === 0) {
         if (minutesRemaining === 0) {

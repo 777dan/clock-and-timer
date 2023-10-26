@@ -12,7 +12,7 @@
 
 <body>
     <div class="container-fluid">
-        <h1 class="text-center">Clock and timer</h1>
+        <h1 class="text-center">Clock</h1>
         <div class="container mb-5">
             <div class="clock">
                 <div class="hour-hand" id="hour-hand"></div>
@@ -21,7 +21,16 @@
             </div>
         </div>
 
+        <h1 class="text-center">Timer</h1>
         <div class="container" id="timer">
+            <div class="row d-flex justify-content-center my-3">
+                <input type="text" class="col-3" id="timer-display" value="00:00:00" disabled>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <span class="col-3">Hours</span>
+                <span class="col-3">Minutes</span>
+                <span class="col-3">Seconds</span>
+            </div>
             <div class="row d-flex justify-content-center" id="setTimer">
                 <input class="col-3" type="number" id="timer-hours" value="0">
                 <input class="col-3" type="number" id="timer-minutes" value="0">
